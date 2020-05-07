@@ -52,15 +52,15 @@
                     <!-- titulo -->
                     <div class="form-group">
                         <label for="titulo" class="text-monospace">Título</label>
-                        <input type="text" name="titulo" id="titulo" class="form-control text-monospace" placeholder="digite o seu título">
+                        <input type="text" name="titulo" id="titulo" class="form-control text-monospace" placeholder="digite o seu título" [(ngModel)]="postagemData.titulo">
                     </div>
                     <!-- texto -->
                     <div class="form-group">
                         <label for="texto" class="text-monospace">Texto:</label>
-                        <textarea name="texto" id="texto" cols="30" rows="10" class="form-control text-monospace"  placeholder="digite o seu texto"></textarea>
+                        <textarea name="texto" id="texto" cols="30" rows="10" class="form-control text-monospace"  placeholder="digite o seu texto" [(ngModel)]="postagemData.texto"></textarea>
                     <!-- botão -->
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-outline-info w-25 mt-3" >Publicar</button>
+                        <button type="button" class="btn btn-outline-info w-25 mt-3" (click)="publicar()">Publicar</button>
                     </div>
 
                     </div>
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="card-body">
-                  <p class="card-text"  {{postagem.texto}}></p>
+                  <p class="card-text">{{postagem.texto}}</p>
                     
                   <small class="form-text m-0 text-muted mb-3 text-monospace"> 
                       Postado em: {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
